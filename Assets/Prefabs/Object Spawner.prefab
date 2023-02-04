@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRate: 3
   waterDroplet: {fileID: 4028019923087495274, guid: 55f85cc0f7a57fc43b933d29b947b539, type: 3}
+  baseRock: {fileID: 2400300847099644915, guid: 1dc9a8c0f84bd2d47ab18390f4d9fd83, type: 3}
