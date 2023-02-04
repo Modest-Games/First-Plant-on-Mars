@@ -23,15 +23,19 @@ public class GameController : MonoBehaviour
 
     [HideInInspector] public Vector2 worldScrollingDir;
     public float _gameSpeed;
+    public Vector2 _virtualPlayerPosition;
 
     void Start()
     {
-        
+        _virtualPlayerPosition = new Vector2(0, -5);
     }
 
     void Update()
     {
         Vector2 playerMoveDirection = PlayerController.Instance.transform.rotation * Vector2.down;
         worldScrollingDir = Time.deltaTime * GameController.Instance._gameSpeed * playerMoveDirection;
+
+        // move the player's virtual position
+        _virtualPlayerPosition -= worldScrollingDir;
     }
 }
