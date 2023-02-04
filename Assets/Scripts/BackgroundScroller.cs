@@ -4,9 +4,28 @@ using UnityEngine;
 
 public class BackgroundScroller : MonoBehaviour
 {
+    #region Singleton
+    public static BackgroundScroller Instance { get; private set; }
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    #endregion
+
     [Header("Config")]
     [SerializeField] private float speed = 5f;
     public bool isScrolling = true;
+
+    [HideInInspector] public Vector2 worldScrollingDir;
 
     private PlayerController _playerController;
     private Material backgroundMaterial;
@@ -33,14 +52,9 @@ public class BackgroundScroller : MonoBehaviour
         if (matOffset.x < -100f || matOffset.x > 100f)
             matOffset.x = 0f;
 
-        else
-        {
-
-            Vector2 playerMoveDirection = _playerController.transform.rotation * Vector2.down;
-            
-            matOffset += Time.deltaTime * speed * playerMoveDirection;
-
-        }
+        Vector2 playerMoveDirection = _playerController.transform.rotation * Vector2.down;
+        worldScrollingDir = Time.deltaTime * speed * playerMoveDirection;
+        matOffset += worldScrollingDir;
 
         backgroundMaterial.mainTextureOffset = matOffset;
     }
