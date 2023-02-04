@@ -127,6 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1463052925835888945}
   - component: {fileID: 5482519485595672799}
+  - component: {fileID: 7527006697262626946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -163,6 +164,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRotationAngle: 65
+  turnSpeed: 75
+  defaultSpeed: 1
+  speed: 5
+  _distanceTravelled: 0
+  _distanceOfLastRoot: 0
+--- !u!114 &7527006697262626946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477733760947444343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1623de283752a954380b478463e0ae42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceBetweenRootSegments: 1
+  maxLineSegments: 15
+  _rootContainer: {fileID: 0}
+  rootSpeed: 5.8
 --- !u!1 &8957038837741159765
 GameObject:
   m_ObjectHideFlags: 0
