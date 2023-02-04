@@ -26,22 +26,22 @@ public class RootSim : MonoBehaviour
             SpawnRootSegment();
 
         // update all roots
-        ScrollBGRoot(_playerController.transform.rotation * Vector2.down * 0.005f  * _playerController.speed);
+        ScrollBGRoot(GameController.Instance.worldScrollingDir);
     }
 
     private void SpawnRootSegment()
     {
         _rootLine.positionCount++;
         _distanceOfLastRoot = _playerController._distanceTravelled;
-
-        if (_rootLine.positionCount > maxLineSegments)
-        {
-        }
     }
 
     private void ScrollBGRoot(Vector2 moveAmount)
     {
-        //_rootLine.SetPositions(.transform.position -= new Vector3(moveAmount.x, moveAmount.y, 0);
+        // check if the root has too many segments
+        if (_rootLine.positionCount > maxLineSegments)
+        {
+
+        }
 
         for (int i = 0; i < _rootLine.positionCount - 1; i++)
         {

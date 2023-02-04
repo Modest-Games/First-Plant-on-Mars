@@ -6,6 +6,6 @@ public class ObjectScroller : MonoBehaviour
 {
     private void Update()
     {
-        transform.position -= (Vector3)BackgroundScroller.Instance.worldScrollingDir;
+        transform.position -= (Vector3)GameController.Instance.worldScrollingDir;
     }
 }

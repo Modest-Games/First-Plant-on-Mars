@@ -4,10 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Singleton
+    public static PlayerController Instance { get; private set; }
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    #endregion
+
     public float maxRotationAngle;
     public float turnSpeed;
     public float defaultSpeed;
-    public float speed;
     
     public float _distanceTravelled;
     public float _distanceOfLastRoot = 0f;
@@ -33,9 +49,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // update distance travelled
-        _distanceTravelled += Time.deltaTime * speed;
+        _distanceTravelled += Time.deltaTime * GameController.Instance._gameSpeed;
 
-
-        
     }
 }
