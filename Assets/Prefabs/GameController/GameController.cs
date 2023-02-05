@@ -63,6 +63,7 @@ public class GameController : MonoBehaviour
         alive = true;
         playerProperties.Score = 0;
         previousDepth = -5f;
+        playerController.transform.eulerAngles = Vector3.zero;
 
         backgroundScroller.StartScrollingLoop();
         objectSpawner.StartObjectSpawning();
