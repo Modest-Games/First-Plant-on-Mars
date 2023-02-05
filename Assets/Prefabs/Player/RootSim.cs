@@ -22,6 +22,8 @@ public class RootSim : MonoBehaviour
 
     void Update()
     {
+        if (!GameController.Instance.alive) return;
+
         if (_playerController._distanceTravelled - _distanceOfLastRoot >= distanceBetweenRootSegments)
             SpawnRootSegment();
 

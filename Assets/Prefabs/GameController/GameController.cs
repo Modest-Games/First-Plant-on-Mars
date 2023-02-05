@@ -21,6 +21,9 @@ public class GameController : MonoBehaviour
     }
     #endregion
 
+    public delegate void GameControllerDelegate();
+    public static GameControllerDelegate playerDied;
+
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerProperties playerProperties;
     [SerializeField] private BackgroundScroller backgroundScroller;
@@ -36,8 +39,12 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        _virtualPlayerPosition = new Vector2(0, -5);
+        NewGame();
+    }
 
+    public void NewGame()
+    {
+        _virtualPlayerPosition = new Vector2(0, -5);
         StartCoroutine(GameLoop());
     }
 
@@ -61,7 +68,10 @@ public class GameController : MonoBehaviour
             // Life decrement:
             playerProperties.Life -= Time.deltaTime * 0.75f;
             if (playerProperties.Life <= 0)
+            {
                 alive = false;
+                if (playerDied != null) playerDied();
+            }
 
             // Score increment:
             playerProperties.Score += (_virtualPlayerPosition.y - previousDepth) * 2f;
@@ -73,6 +83,6 @@ public class GameController : MonoBehaviour
         backgroundScroller.StopAllCoroutines();
         objectSpawner.StopAllCoroutines();
 
-        playerController.gameObject.SetActive(false);
+        //playerController.gameObject.SetActive(false);
     }
 }

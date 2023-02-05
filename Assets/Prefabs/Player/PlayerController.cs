@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public delegate void PlayerControllerDelegate();
+    public static PlayerControllerDelegate CollectedWater;
+    public static PlayerControllerDelegate HitBones;
+    public static PlayerControllerDelegate HitObstacle;
+
     #region Singleton
     public static PlayerController Instance { get; private set; }
     private void Awake()
@@ -74,18 +79,22 @@ public class PlayerController : MonoBehaviour
             case "Water(Clone)":
                 playerProperties.Life += 5;
                 playerProperties.Score += 100;
+                if (CollectedWater != null) CollectedWater();
                 break;
 
             case "Rock(Clone)":
                 playerProperties.Life -= 2;
+                if (HitObstacle != null) HitObstacle();
                 break;
 
             case "Bones(Clone)":
                 playerProperties.Life -= 5;
+                if (HitBones != null) HitBones();
                 break;
 
             case "UFO(Clone)":
                 playerProperties.Life -= 10;
+                if (HitObstacle != null) HitObstacle();
                 break;
         }
 

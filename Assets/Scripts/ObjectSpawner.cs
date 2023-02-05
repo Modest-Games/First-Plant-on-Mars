@@ -78,7 +78,7 @@ public class ObjectSpawner : MonoBehaviour
 
         var rangeModifier = water ? 0.4f : 0.9f;
 
-        var randomPosition = new Vector2(Random.Range(gameAreaMinBounds.x * rangeModifier, gameAreaMaxBounds.x * rangeModifier), gameAreaMinBounds.y * 1.1f);
+        var randomPosition = new Vector2(Random.Range(gameAreaMinBounds.x * rangeModifier, gameAreaMaxBounds.x * rangeModifier), gameAreaMinBounds.y * 1.2f);
 
         if (previousSpawnLocation == Vector2.zero)
         {
@@ -86,8 +86,8 @@ public class ObjectSpawner : MonoBehaviour
             return randomPosition;
         }
 
-        while (Vector2.Distance(randomPosition, previousSpawnLocation) < 2.0f)
-            randomPosition = new Vector2(Random.Range(gameAreaMinBounds.x * rangeModifier, gameAreaMaxBounds.x * rangeModifier), gameAreaMinBounds.y * 1.1f);
+        while (Vector2.Distance(randomPosition, previousSpawnLocation) < 2.5f)
+            randomPosition = new Vector2(Random.Range(gameAreaMinBounds.x * rangeModifier, gameAreaMaxBounds.x * rangeModifier), gameAreaMinBounds.y * 1.2f);
 
         previousSpawnLocation = randomPosition;
         return randomPosition;
