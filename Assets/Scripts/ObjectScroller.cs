@@ -4,10 +4,32 @@ using UnityEngine;
 
 public class ObjectScroller : MonoBehaviour
 {
+    private Vector3 startPosition;
+
+    private void Awake()
+    {
+        GameController.gameReset += OnGameReset;
+    }
+
+    private void Start()
+    {
+        startPosition = gameObject.transform.position;
+    }
+
+    private void OnDestroy()
+    {
+        GameController.gameReset -= OnGameReset;
+    }
+
     private void Update()
     {
         if (!GameController.Instance.alive) return;
 
         transform.position -= (Vector3)GameController.Instance.worldScrollingDir;
+    }
+
+    private void OnGameReset()
+    {
+        transform.position = startPosition;
     }
 }

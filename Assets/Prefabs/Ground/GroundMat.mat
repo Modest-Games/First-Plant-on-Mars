@@ -84,12 +84,13 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _StartingOffset: -13.36
+    - _StartingOffset: -5.36
     - _Test: 0
     - _TextureChangeDepth: 300
     m_Colors:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling: {r: 36, g: 20, b: 0, a: 0}
+    - _TopColour: {r: 0.49803925, g: 0.2627451, b: 0.0627451, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6062655247395117113
 MonoBehaviour:
