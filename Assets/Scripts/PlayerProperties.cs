@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using UnityEditor.Experimental;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerProperties : MonoBehaviour
 {
-    [SerializeField] private float maxLife = 30f;
-
+    [Header("Life")]
     [SerializeField] private Slider lifeBar;
     [SerializeField] private Image lifeBarFill;
     [SerializeField] private Gradient lifeBarGradient;
+    [SerializeField] private float maxLife = 30f;
+
+    [Header("Score")]
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     public float Life
     {
@@ -26,4 +26,18 @@ public class PlayerProperties : MonoBehaviour
     }
 
     [SerializeField] private float life;
+
+    public float Score
+    {
+        get { return score; }
+        set
+        {
+            score = value;
+
+            var intScore = (int)value;
+            scoreText.text = "Score: " + intScore.ToString();
+        }
+    }
+
+    [SerializeField] private float score;
 }

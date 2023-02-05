@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             case "Water(Clone)":
                 playerProperties.Life += 5;
+                playerProperties.Score += 100;
                 break;
 
             case "Rock(Clone)":

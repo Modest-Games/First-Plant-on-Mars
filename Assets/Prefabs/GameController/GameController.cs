@@ -32,6 +32,8 @@ public class GameController : MonoBehaviour
     public float _gameSpeed;
     public Vector2 _virtualPlayerPosition;
 
+    private float previousDepth = -5f;
+
     void Start()
     {
         _virtualPlayerPosition = new Vector2(0, -5);
@@ -56,9 +58,14 @@ public class GameController : MonoBehaviour
             // move the player's virtual position
             _virtualPlayerPosition -= worldScrollingDir;
 
+            // Life decrement:
             playerProperties.Life -= Time.deltaTime * 0.75f;
             if (playerProperties.Life <= 0)
                 alive = false;
+
+            // Score increment:
+            playerProperties.Score += (_virtualPlayerPosition.y - previousDepth) * 2f;
+            previousDepth = _virtualPlayerPosition.y;
 
             yield return null;
         }
