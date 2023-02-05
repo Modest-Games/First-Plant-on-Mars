@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8c126ec23d53b7419ef1d7f3f392c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 3
+  waterSpawnRate: 5
+  obstacleSpawnRate: 0.5
   waterDroplet: {fileID: 4028019923087495274, guid: 55f85cc0f7a57fc43b933d29b947b539, type: 3}
-  baseRock: {fileID: 2400300847099644915, guid: 1dc9a8c0f84bd2d47ab18390f4d9fd83, type: 3}
+  staticObstacles:
+  - {fileID: 2400300847099644915, guid: 1dc9a8c0f84bd2d47ab18390f4d9fd83, type: 3}
+  - {fileID: 2400300847099644915, guid: a99e4ce600d22c445a2aabdf4e83a4ce, type: 3}
+  - {fileID: 2400300847099644915, guid: 539b770d39bac984d986fe3b9a707013, type: 3}

@@ -29,7 +29,10 @@ public class BackgroundScroller : MonoBehaviour
 
     void Start()
     {
+        //_rootLine = rootContainer.GetComponent<LineRenderer>();
         backgroundMaterial = GetComponent<MeshRenderer>().material;
+
+        backgroundMaterial.SetVector("_Offset", new Vector2(0, -5f));
     }
 
     public void StartScrollingLoop()
@@ -41,17 +44,18 @@ public class BackgroundScroller : MonoBehaviour
     {
         while (GameController.Instance.alive)
         {
-            var matOffset = backgroundMaterial.mainTextureOffset;
+            var matOffset = backgroundMaterial.GetVector("_Offset");
 
-            if (matOffset.y < -100f)
-                matOffset.y = 0f;
+            //if (matOffset.y < -100f)
+            //    matOffset.y = 0f;
 
-            if (matOffset.x < -100f || matOffset.x > 100f)
-                matOffset.x = 0f;
+            //if (matOffset.x < -100f || matOffset.x > 100f)
+            //    matOffset.x = 0f;
 
-            matOffset += GameController.Instance.worldScrollingDir;
+            matOffset.x += GameController.Instance.worldScrollingDir.x;
+            matOffset.y += GameController.Instance.worldScrollingDir.y;
 
-            backgroundMaterial.mainTextureOffset = matOffset;
+            backgroundMaterial.SetVector("_Offset", matOffset);
 
             yield return null;
         }

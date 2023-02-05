@@ -41,6 +41,8 @@ public class GameController : MonoBehaviour
 
     private IEnumerator GameLoop()
     {
+        yield return new WaitForSeconds(1);
+
         alive = true;
 
         backgroundScroller.StartScrollingLoop();

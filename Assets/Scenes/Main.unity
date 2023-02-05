@@ -706,22 +706,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7665171199260240308, guid: 25113ed1cf5d28a48bc426fea0c819a9, type: 3}
-      propertyPath: staticObstacles.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7665171199260240308, guid: 25113ed1cf5d28a48bc426fea0c819a9, type: 3}
-      propertyPath: staticObstacles.Array.data[0]
-      value: 
-      objectReference: {fileID: 2400300847099644915, guid: 1dc9a8c0f84bd2d47ab18390f4d9fd83, type: 3}
-    - target: {fileID: 7665171199260240308, guid: 25113ed1cf5d28a48bc426fea0c819a9, type: 3}
-      propertyPath: staticObstacles.Array.data[1]
-      value: 
-      objectReference: {fileID: 2400300847099644915, guid: a99e4ce600d22c445a2aabdf4e83a4ce, type: 3}
-    - target: {fileID: 7665171199260240308, guid: 25113ed1cf5d28a48bc426fea0c819a9, type: 3}
-      propertyPath: staticObstacles.Array.data[2]
-      value: 
-      objectReference: {fileID: 2400300847099644915, guid: 539b770d39bac984d986fe3b9a707013, type: 3}
     - target: {fileID: 7665171199260240309, guid: 25113ed1cf5d28a48bc426fea0c819a9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -782,10 +766,6 @@ PrefabInstance:
     - target: {fileID: 9196779768088157838, guid: 0047028540629e34faf941adcbf2f9b7, type: 3}
       propertyPath: m_Name
       value: Background Scroller
-      objectReference: {fileID: 0}
-    - target: {fileID: 9196779768088157872, guid: 0047028540629e34faf941adcbf2f9b7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9196779768088157873, guid: 0047028540629e34faf941adcbf2f9b7, type: 3}
       propertyPath: rootContainer
