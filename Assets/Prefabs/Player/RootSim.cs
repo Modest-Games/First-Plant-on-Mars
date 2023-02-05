@@ -47,5 +47,9 @@ public class RootSim : MonoBehaviour
         {
             _rootLine.SetPosition(i, _rootLine.GetPosition(i) - new Vector3(moveAmount.x, moveAmount.y, 0f));
         }
+
+        int j = _rootLine.positionCount - 1;
+
+        _rootLine.SetPosition(j, PlayerController.Instance.transform.Find("Art").position);
     }
 }

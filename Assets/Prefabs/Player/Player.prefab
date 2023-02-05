@@ -109,8 +109,8 @@ Transform:
   m_GameObject: {fileID: 4292312126465436412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.58, y: 0.58, z: 0.58}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1290621848883660230}
   - {fileID: 6933817049284472497}
@@ -167,10 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce485b32e2310e4bb500ae282404c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerProperties: {fileID: 0}
   maxRotationAngle: 65
-  turnSpeed: 75
+  turnSpeed: 100
   defaultSpeed: 1
+  occillateAmount: 0.4
+  occillateSpeed: 5
   _distanceTravelled: 0
   _distanceOfLastRoot: 0
 --- !u!96 &7620233781130969447
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62066bed46651eb479a4e58684ce7c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceBetweenRootSegments: 1
+  distanceBetweenRootSegments: 0.5
   maxLineSegments: 15
   _rootContainer: {fileID: 0}
   rootSpeed: 5.8
@@ -346,6 +347,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0bfacbc75401374a87b077fb86c4325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLife: 30
+  lifeBar: {fileID: 0}
+  lifeBarFill: {fileID: 0}
+  lifeBarGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0.91478175, b: 0.082352936, a: 1}
+    key2: {r: 0, g: 1, b: 0.0024728775, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 12143
+    ctime1: 28913
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
   life: 30
 --- !u!1 &8957038837741159765
 GameObject:

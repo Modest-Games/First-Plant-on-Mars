@@ -736,58 +736,6 @@ PrefabInstance:
       propertyPath: lifeBarFill
       value: 
       objectReference: {fileID: 1139617453}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.ctime0
-      value: 12143
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.ctime1
-      value: 28913
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.ctime2
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key1.b
-      value: 0.082352936
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key1.g
-      value: 0.91478175
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key2.b
-      value: 0.0024728775
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key2.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.key2.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
-      propertyPath: lifeBarGradient.m_NumColorKeys
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4653810627668909844, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
       propertyPath: _rootContainer
       value: 
@@ -818,30 +766,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4106988159037017159, guid: f6ec5f0196859b242b193ce193ad4c4e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106988159037017159, guid: f6ec5f0196859b242b193ce193ad4c4e, type: 3}
-      propertyPath: m_UseWorldSpace
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106988159037017159, guid: f6ec5f0196859b242b193ce193ad4c4e, type: 3}
-      propertyPath: m_Positions.Array.data[0].y
-      value: 5.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106988159037017159, guid: f6ec5f0196859b242b193ce193ad4c4e, type: 3}
-      propertyPath: m_Positions.Array.data[1].z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106988159037017159, guid: f6ec5f0196859b242b193ce193ad4c4e, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106988159037017159, guid: f6ec5f0196859b242b193ce193ad4c4e, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.95261663
-      objectReference: {fileID: 0}
     - target: {fileID: 6061707937027031706, guid: f6ec5f0196859b242b193ce193ad4c4e, type: 3}
       propertyPath: m_Name
       value: RootContainer

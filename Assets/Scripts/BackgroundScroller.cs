@@ -32,7 +32,7 @@ public class BackgroundScroller : MonoBehaviour
         //_rootLine = rootContainer.GetComponent<LineRenderer>();
         backgroundMaterial = GetComponent<MeshRenderer>().material;
 
-        backgroundMaterial.SetVector("_Offset", new Vector2(0, -5f));
+        backgroundMaterial.SetVector("_Offset", Vector2.zero);
     }
 
     public void StartScrollingLoop()

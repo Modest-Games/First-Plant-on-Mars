@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public float maxRotationAngle;
     public float turnSpeed;
     public float defaultSpeed;
+    public float occillateAmount;
+    public float occillateSpeed;
     
     public float _distanceTravelled;
     public float _distanceOfLastRoot = 0f;
@@ -43,6 +45,10 @@ public class PlayerController : MonoBehaviour
 
         // Update distance travelled
         _distanceTravelled += Time.deltaTime * GameController.Instance._gameSpeed;
+
+        // occillate on the x axis
+        transform.Find("Art").localPosition = new Vector2(
+            occillateAmount * Mathf.PerlinNoise(Time.time * occillateSpeed, 0) /* Mathf.Sin(Time.time * occillateSpeed) */, 0);
     }
 
     private void PlayerInput()
