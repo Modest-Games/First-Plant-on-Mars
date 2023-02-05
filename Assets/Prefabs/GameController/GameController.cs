@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private PlayerProperties playerProperties;
     [SerializeField] private BackgroundScroller backgroundScroller;
     [SerializeField] private ObjectSpawner objectSpawner;
+    [SerializeField] private Transform gameOverPanel;
+    [SerializeField] private AudioSource music;
 
     public bool alive = false;
 
@@ -44,6 +46,7 @@ public class GameController : MonoBehaviour
 
     public void NewGame()
     {
+        music.volume = 1;
         _virtualPlayerPosition = new Vector2(0, -5);
         StartCoroutine(GameLoop());
     }
@@ -71,6 +74,8 @@ public class GameController : MonoBehaviour
             {
                 alive = false;
                 if (playerDied != null) playerDied();
+                gameOverPanel.gameObject.SetActive(true);
+                music.volume = 0.4f;
             }
 
             // Score increment:
