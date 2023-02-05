@@ -839,6 +839,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4436079308965545374, guid: 79b66d3673765d74d808e0eadea829c9, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 872334974}
+    - target: {fileID: 4436079308965545374, guid: 79b66d3673765d74d808e0eadea829c9, type: 3}
+      propertyPath: GameOverPanel
+      value: 
+      objectReference: {fileID: 319733688}
+    - target: {fileID: 4436079308965545374, guid: 79b66d3673765d74d808e0eadea829c9, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 319733688}
+    - target: {fileID: 4436079308965545374, guid: 79b66d3673765d74d808e0eadea829c9, type: 3}
       propertyPath: objectSpawner
       value: 
       objectReference: {fileID: 863998341}
@@ -904,6 +916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79b66d3673765d74d808e0eadea829c9, type: 3}
+--- !u!82 &872334974 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5590611538588700189, guid: 79b66d3673765d74d808e0eadea829c9, type: 3}
+  m_PrefabInstance: {fileID: 872334973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1063369191 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4605081430387962362, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
@@ -1024,8 +1041,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7527006697262626946, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1b50d3ef90aec840a9a7636ff2e99f5, type: 3}
 --- !u!1001 &1531542858
 PrefabInstance:
