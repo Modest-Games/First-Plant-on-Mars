@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
 
     public delegate void GameControllerDelegate();
     public static GameControllerDelegate playerDied;
+    public static GameControllerDelegate gameReset;
 
     [SerializeField] private PlayerController playerController;
     [SerializeField] private PlayerProperties playerProperties;
@@ -52,19 +53,21 @@ public class GameController : MonoBehaviour
 
     private IEnumerator GameLoop()
     {
-        yield return new WaitForEndOfFrame();
-
         RootSim.Instance.ResetRoot();
         music.volume = 1;
         gameOverPanel.gameObject.SetActive(false);
         playerProperties.ResetLife();
         _virtualPlayerPosition = new Vector2(0, -5);
         objectSpawner.DestroyAllObjects();
-        alive = true;
         playerProperties.Score = 0;
         previousDepth = -5f;
         playerController.transform.eulerAngles = Vector3.zero;
+        backgroundScroller.ResetBG();
+        if (gameReset != null) gameReset();
 
+        yield return new WaitForSeconds(3);
+
+        alive = true;
         backgroundScroller.StartScrollingLoop();
         objectSpawner.StartObjectSpawning();
 

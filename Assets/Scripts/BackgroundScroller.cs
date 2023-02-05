@@ -18,6 +18,8 @@ public class BackgroundScroller : MonoBehaviour
         {
             Instance = this;
         }
+
+        backgroundMaterial = GetComponent<MeshRenderer>().material;
     }
     #endregion
 
@@ -30,7 +32,6 @@ public class BackgroundScroller : MonoBehaviour
     void Start()
     {
         //_rootLine = rootContainer.GetComponent<LineRenderer>();
-        backgroundMaterial = GetComponent<MeshRenderer>().material;
 
         backgroundMaterial.SetVector("_Offset", Vector2.zero);
     }
