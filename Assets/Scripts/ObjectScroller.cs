@@ -9,11 +9,11 @@ public class ObjectScroller : MonoBehaviour
     private void Awake()
     {
         GameController.gameReset += OnGameReset;
+        startPosition = gameObject.transform.position;
     }
 
     private void Start()
     {
-        startPosition = gameObject.transform.position;
     }
 
     private void OnDestroy()

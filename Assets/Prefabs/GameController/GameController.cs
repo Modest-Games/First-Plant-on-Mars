@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -39,16 +40,23 @@ public class GameController : MonoBehaviour
     public Vector2 _virtualPlayerPosition;
 
     private float previousDepth = -5f;
+    public int playthrough;
 
     void Start()
     {
+        playthrough = -1;
         DontDestroyOnLoad(gameObject);
         NewGame();
     }
 
     public void NewGame()
     {
-        StartCoroutine(GameLoop());
+        playthrough++;
+
+        if (playthrough > 4)
+            SceneManager.LoadScene("End");
+        else
+            StartCoroutine(GameLoop());
     }
 
     private IEnumerator GameLoop()
