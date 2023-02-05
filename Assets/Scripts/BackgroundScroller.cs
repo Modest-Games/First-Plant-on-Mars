@@ -22,40 +22,38 @@ public class BackgroundScroller : MonoBehaviour
     #endregion
 
     [Header("Config")]
-    //[SerializeField] private float speed = 5f;
     public bool isScrolling = true;
     public Transform rootContainer;
 
     private Material backgroundMaterial;
-    private LineRenderer _rootLine;
 
     void Start()
     {
-        // setup variables
         backgroundMaterial = GetComponent<MeshRenderer>().material;
-        _rootLine = rootContainer.GetComponent<LineRenderer>();
     }
 
-    void Update()
+    public void StartScrollingLoop()
     {
-        if (isScrolling)
-            ScrollBackground();
+        StartCoroutine(ScrollingLoop());
     }
 
-    
-
-    private void ScrollBackground()
+    private IEnumerator ScrollingLoop()
     {
-        var matOffset = backgroundMaterial.mainTextureOffset;
+        while (GameController.Instance.alive)
+        {
+            var matOffset = backgroundMaterial.mainTextureOffset;
 
-        if (matOffset.y < -100f)
-            matOffset.y = 0f;
+            if (matOffset.y < -100f)
+                matOffset.y = 0f;
 
-        if (matOffset.x < -100f || matOffset.x > 100f)
-            matOffset.x = 0f;
+            if (matOffset.x < -100f || matOffset.x > 100f)
+                matOffset.x = 0f;
 
-        matOffset += GameController.Instance.worldScrollingDir;
+            matOffset += GameController.Instance.worldScrollingDir;
 
-        backgroundMaterial.mainTextureOffset = matOffset;
+            backgroundMaterial.mainTextureOffset = matOffset;
+
+            yield return null;
+        }
     }
 }
