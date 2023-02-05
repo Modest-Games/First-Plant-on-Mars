@@ -236,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4292312126465436412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
   m_LocalScale: {x: 0.58, y: 0.58, z: 0.58}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -683,6 +683,7 @@ MonoBehaviour:
   defaultSpeed: 1
   occillateAmount: 0.4
   occillateSpeed: 5
+  timeBetweenFlips: 0.1
   _distanceTravelled: 0
   _distanceOfLastRoot: 0
 --- !u!114 &4653810627668909844
@@ -701,6 +702,7 @@ MonoBehaviour:
   maxLineSegments: 15
   _rootContainer: {fileID: 0}
   rootSpeed: 5.8
+  _rootLine: {fileID: 0}
 --- !u!50 &7990567311060465974
 Rigidbody2D:
   serializedVersion: 4

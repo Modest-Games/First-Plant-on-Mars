@@ -26,7 +26,7 @@ public class RootSim : MonoBehaviour
     public Transform _rootContainer;
     public float rootSpeed;
 
-    private LineRenderer _rootLine;
+    public LineRenderer _rootLine;
     private float _distanceOfLastRoot = 0f;
     private Vector3[] startingRootPositions;
 
@@ -69,7 +69,8 @@ public class RootSim : MonoBehaviour
 
         int j = _rootLine.positionCount - 1;
 
-        _rootLine.SetPosition(j, PlayerController.Instance.transform.Find("Art").position);
+        //_rootLine.SetPosition(j, PlayerController.Instance.transform.Find("Art").position);
+        _rootLine.SetPosition(j, PlayerController.Instance.transform.position);
     }
 
     public void ResetRoot()

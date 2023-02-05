@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public float defaultSpeed;
     public float occillateAmount;
     public float occillateSpeed;
+    public float timeBetweenFlips;
     
     public float _distanceTravelled;
     public float _distanceOfLastRoot = 0f;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerProperties = GetComponent<PlayerProperties>();
+        InvokeRepeating("Flip", 0f, timeBetweenFlips); ;
     }
 
     void Update()
@@ -52,8 +54,22 @@ public class PlayerController : MonoBehaviour
         _distanceTravelled += Time.deltaTime * GameController.Instance._gameSpeed;
 
         // occillate on the x axis
-        transform.Find("Art").localPosition = new Vector2(
-            occillateAmount * Mathf.PerlinNoise(Time.time * occillateSpeed, 0) /* Mathf.Sin(Time.time * occillateSpeed) */, 0);
+        //transform.Find("Art").localPosition = new Vector2(
+        //    occillateAmount * Mathf.PerlinNoise(Time.time * occillateSpeed, 0) /* Mathf.Sin(Time.time * occillateSpeed) */, 0);
+
+        //LineRenderer rootLine = RootSim.Instance._rootLine;
+        //Vector3 rootDir = rootLine.GetPosition(rootLine.positionCount - 1) 
+        //    - rootLine.GetPosition(rootLine.positionCount - 2);
+
+        //transform.Find("Art").rotation = Quaternion.FromToRotation(Vector2.down, new Vector2(rootDir.x, rootDir.y));
+    }
+
+    private void Flip()
+    {
+        if (!GameController.Instance.alive) return;
+
+        transform.Find("Art").GetChild(0).GetComponent<SpriteRenderer>().flipX =
+            !transform.Find("Art").GetChild(0).GetComponent<SpriteRenderer>().flipX;
     }
 
     private void PlayerInput()
