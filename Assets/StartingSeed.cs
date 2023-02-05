@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StartingSeed : MonoBehaviour
 {
     public Sprite[] sprites;
+    public TextMeshProUGUI text;
 
     private void Awake()
     {
@@ -19,5 +21,7 @@ public class StartingSeed : MonoBehaviour
     private void OnGameReset()
     {
         GetComponent<SpriteRenderer>().sprite = sprites[GameController.Instance.playthrough];
+
+        text.text = "ROOTS: " + (GameController.Instance.playthrough + 1) + " / 5";
     }
 }

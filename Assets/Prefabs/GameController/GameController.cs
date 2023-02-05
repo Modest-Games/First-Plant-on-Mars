@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour
         playerProperties.ResetLife();
         _virtualPlayerPosition = new Vector2(0, -5);
         objectSpawner.DestroyAllObjects();
-        playerProperties.Score = 0;
+        //playerProperties.Score = 0;
         previousDepth = -5f;
         playerController.transform.eulerAngles = Vector3.zero;
         backgroundScroller.ResetBG();
