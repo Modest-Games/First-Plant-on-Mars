@@ -41,21 +41,28 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         NewGame();
     }
 
     public void NewGame()
     {
-        music.volume = 1;
-        _virtualPlayerPosition = new Vector2(0, -5);
         StartCoroutine(GameLoop());
     }
 
     private IEnumerator GameLoop()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForEndOfFrame();
 
+        RootSim.Instance.ResetRoot();
+        music.volume = 1;
+        gameOverPanel.gameObject.SetActive(false);
+        playerProperties.ResetLife();
+        _virtualPlayerPosition = new Vector2(0, -5);
+        objectSpawner.DestroyAllObjects();
         alive = true;
+        playerProperties.Score = 0;
+        previousDepth = -5f;
 
         backgroundScroller.StartScrollingLoop();
         objectSpawner.StartObjectSpawning();

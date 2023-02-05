@@ -42,15 +42,11 @@ public class BackgroundScroller : MonoBehaviour
 
     private IEnumerator ScrollingLoop()
     {
+        ResetBG();
+
         while (GameController.Instance.alive)
         {
             var matOffset = backgroundMaterial.GetVector("_Offset");
-
-            //if (matOffset.y < -100f)
-            //    matOffset.y = 0f;
-
-            //if (matOffset.x < -100f || matOffset.x > 100f)
-            //    matOffset.x = 0f;
 
             matOffset.x += GameController.Instance.worldScrollingDir.x;
             matOffset.y += GameController.Instance.worldScrollingDir.y;
@@ -59,5 +55,10 @@ public class BackgroundScroller : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void ResetBG()
+    {
+        backgroundMaterial.SetVector("_Offset", Vector4.zero);
     }
 }

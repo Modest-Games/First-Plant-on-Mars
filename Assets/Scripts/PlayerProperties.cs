@@ -52,6 +52,11 @@ public class PlayerProperties : MonoBehaviour
 
     [SerializeField] private float life;
 
+    public void ResetLife()
+    {
+        life = maxLife;
+    }
+
     public float Score
     {
         get { return score; }

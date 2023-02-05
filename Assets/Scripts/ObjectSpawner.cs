@@ -9,6 +9,7 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private float pelletSpawnRate = 10f;
     [SerializeField] private float obstacleSpawnRate = 5f;
 
+    [SerializeField] private Transform objectContainer;
     [SerializeField] private GameObject waterDroplet;
     [SerializeField] private GameObject pellets;
     [SerializeField] private GameObject[] staticObstacles;
@@ -72,7 +73,7 @@ public class ObjectSpawner : MonoBehaviour
                     break;
             }
 
-            var spawnedObject = Instantiate(staticObstacles[randomObstacleIndex], RandomPosition(false), Quaternion.Euler(randomRotation));
+            var spawnedObject = Instantiate(staticObstacles[randomObstacleIndex], RandomPosition(false), Quaternion.Euler(randomRotation), objectContainer);
 
             if (randomObstacleIndex == 0)
                 spawnedObject.transform.localScale *= Random.Range(0.75f, 1.25f);
@@ -104,5 +105,13 @@ public class ObjectSpawner : MonoBehaviour
 
         previousSpawnLocation = randomPosition;
         return randomPosition;
+    }
+
+    public void DestroyAllObjects()
+    {
+        for (int i = 0; i < objectContainer.childCount; i++)
+        {
+            Destroy(objectContainer.GetChild(i).gameObject);
+        }
     }
 }

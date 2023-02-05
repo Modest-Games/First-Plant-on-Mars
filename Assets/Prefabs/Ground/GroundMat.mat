@@ -84,7 +84,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _StartingOffset: -12.36
+    - _StartingOffset: -13.36
     - _Test: 0
     - _TextureChangeDepth: 300
     m_Colors:
