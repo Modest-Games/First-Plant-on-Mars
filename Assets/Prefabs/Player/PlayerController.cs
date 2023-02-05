@@ -78,23 +78,27 @@ public class PlayerController : MonoBehaviour
         {
             case "Water(Clone)":
                 playerProperties.Life += 5;
-                playerProperties.Score += 100;
+                playerProperties.Score += 50;
                 if (CollectedWater != null) CollectedWater();
                 break;
 
             case "Rock(Clone)":
                 playerProperties.Life -= 2;
-                if (HitObstacle != null) HitObstacle();
+                HitObstacle?.Invoke();
                 break;
 
             case "Bones(Clone)":
                 playerProperties.Life -= 5;
-                if (HitBones != null) HitBones();
+                HitBones?.Invoke();
                 break;
 
             case "UFO(Clone)":
                 playerProperties.Life -= 10;
-                if (HitObstacle != null) HitObstacle();
+                HitObstacle?.Invoke();
+                break;
+
+            case "Pellets(Clone)":
+                playerProperties.Score += 100;
                 break;
         }
 

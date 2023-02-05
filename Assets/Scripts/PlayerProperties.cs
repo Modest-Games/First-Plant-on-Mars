@@ -42,6 +42,7 @@ public class PlayerProperties : MonoBehaviour
         get { return life; }
         set
         {
+            if (value > 30) value = 30;
             life = value;
 
             lifeBar.value = value;

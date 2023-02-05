@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterSpawnRate: 5
+  pelletSpawnRate: 10
   obstacleSpawnRate: 0.5
   waterDroplet: {fileID: 4028019923087495274, guid: 55f85cc0f7a57fc43b933d29b947b539, type: 3}
+  pellets: {fileID: 5601965864897868549, guid: d314c01c5dc196b42b30a637b53ec92f, type: 3}
   staticObstacles:
   - {fileID: 2400300847099644915, guid: 1dc9a8c0f84bd2d47ab18390f4d9fd83, type: 3}
   - {fileID: 2400300847099644915, guid: a99e4ce600d22c445a2aabdf4e83a4ce, type: 3}

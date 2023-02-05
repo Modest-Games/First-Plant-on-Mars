@@ -1521,6 +1521,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7665171199260240308, guid: 25113ed1cf5d28a48bc426fea0c819a9, type: 3}
+      propertyPath: staticObstacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 5601965864897868549, guid: d314c01c5dc196b42b30a637b53ec92f, type: 3}
     - target: {fileID: 7665171199260240309, guid: 25113ed1cf5d28a48bc426fea0c819a9, type: 3}
       propertyPath: m_RootOrder
       value: 5

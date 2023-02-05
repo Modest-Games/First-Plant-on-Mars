@@ -6,9 +6,11 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private float waterSpawnRate = 5f;
+    [SerializeField] private float pelletSpawnRate = 10f;
     [SerializeField] private float obstacleSpawnRate = 5f;
 
     [SerializeField] private GameObject waterDroplet;
+    [SerializeField] private GameObject pellets;
     [SerializeField] private GameObject[] staticObstacles;
 
     private Vector2 previousSpawnLocation = Vector2.zero;
@@ -17,6 +19,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         StartCoroutine(WaterSpawnLoop());
         StartCoroutine(ObstacleSpawnLoop());
+        StartCoroutine(PelletSpawnLoop());
     }
 
     private IEnumerator WaterSpawnLoop()
@@ -26,6 +29,16 @@ public class ObjectSpawner : MonoBehaviour
             yield return new WaitForSeconds(waterSpawnRate);
 
             Instantiate(waterDroplet, RandomPosition(true), Quaternion.identity);
+        }
+    }
+    
+    private IEnumerator PelletSpawnLoop()
+    {
+        while (GameController.Instance.alive)
+        {
+            yield return new WaitForSeconds(pelletSpawnRate);
+
+            Instantiate(pellets, RandomPosition(false), Quaternion.Euler(Vector3.forward * Random.Range(-180f, 180f)));
         }
     }
 
