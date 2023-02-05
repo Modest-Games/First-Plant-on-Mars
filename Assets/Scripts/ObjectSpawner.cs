@@ -90,7 +90,7 @@ public class ObjectSpawner : MonoBehaviour
         var gameAreaMinBounds = Camera.main.ScreenToWorldPoint(Vector3.zero);
         Debug.Log(gameAreaMinBounds);
 
-        var rangeModifier = water ? 0.4f : 0.9f;
+        var rangeModifier = water ? 0.5f : 0.9f;
 
         var randomPosition = new Vector2(Random.Range(gameAreaMinBounds.x * rangeModifier, gameAreaMaxBounds.x * rangeModifier), gameAreaMinBounds.y * 1.2f);
 

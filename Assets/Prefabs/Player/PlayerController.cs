@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
             case "Water(Clone)":
                 playerProperties.Life += 5;
                 playerProperties.Score += 50;
-                if (CollectedWater != null) CollectedWater();
+                CollectedWater?.Invoke();
                 break;
 
             case "Rock(Clone)":
@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
 
             case "Pellets(Clone)":
                 playerProperties.Score += 100;
+                CollectedWater?.Invoke();
                 break;
         }
 

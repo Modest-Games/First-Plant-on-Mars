@@ -71,6 +71,24 @@ public class GameController : MonoBehaviour
         while (alive)
         {
             Vector2 playerMoveDirection = playerController.transform.rotation * Vector2.down;
+
+            if (_virtualPlayerPosition.y > 300f)
+            {
+                _gameSpeed = 6f;
+            }
+
+            else if (_virtualPlayerPosition.y > 600f)
+            {
+                _gameSpeed = 7f;
+            }
+
+            else if (_virtualPlayerPosition.y > 900f)
+            {
+                _gameSpeed *= 8f;
+            }
+
+            Camera.main.orthographicSize = _gameSpeed;
+
             worldScrollingDir = Time.deltaTime * _gameSpeed * playerMoveDirection;
 
             // move the player's virtual position
